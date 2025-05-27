@@ -1,0 +1,20 @@
+*.iml
+.kotlin
+.idea
+.gradle
+**/build/
+captures
+xcuserdata
+!src/**/build/
+local.properties
+.externalNativeBuild
+.cxx
+
+# MacOs
+.DS_Store
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/project.xcworkspace/
+!*.xcworkspace/contents.xcworkspacedata
+**/xcshareddata/WorkspaceSettings.xcsettings
