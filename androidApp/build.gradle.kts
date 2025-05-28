@@ -5,10 +5,10 @@ plugins {
 }
 
 android {
-    namespace = "xyz.blueju.blueshutter.android"
+    namespace = "xyz.blueju.blueshutter"
     compileSdk = 35
     defaultConfig {
-        applicationId = "xyz.blueju.blueshutter.android"
+        applicationId = "xyz.blueju.blueshutter"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

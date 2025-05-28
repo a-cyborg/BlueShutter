@@ -1,9 +1,8 @@
-package xyz.blueju.blueshutter.android
+package xyz.blueju.blueshutter
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.runtime.Composable
 import xyz.blueju.blueshutter.ui.MainScreen
 
 class MainActivity : ComponentActivity() {
