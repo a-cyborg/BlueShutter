@@ -1,4 +1,4 @@
-package xyz.blueju.blueshutter.domain.model
+package xyz.blueju.blueshutter.domain.model.device
 
 data class DeviceSignal(
     val deviceId: String,

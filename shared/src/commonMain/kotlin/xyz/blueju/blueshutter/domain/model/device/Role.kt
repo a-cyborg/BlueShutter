@@ -1,4 +1,4 @@
-package xyz.blueju.blueshutter.domain.model
+package xyz.blueju.blueshutter.domain.model.device
 
 /**
  * Represents bluetooth the role of the current device.
