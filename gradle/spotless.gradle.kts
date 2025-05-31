@@ -1,0 +1,58 @@
+/*
+ * Copyright 2022 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * Source: https://github.com/android/nowinandroid/blob/main/gradle/init.gradle.kts
+ * Modifications made in 2025 by Blueshutter
+ */
+
+val ktlintVersion = "1.6.0"
+
+initscript {
+    val spotlessVersion = "7.0.4"
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.diffplug.spotless:spotless-plugin-gradle:$spotlessVersion")
+    }
+}
+
+rootProject {
+    subprojects {
+        apply<com.diffplug.gradle.spotless.SpotlessPlugin>()
+        extensions.configure<com.diffplug.gradle.spotless.SpotlessExtension> {
+            kotlin {
+                target("**/*.kt")
+                targetExclude("**/build/**/*.kt", "**/MainViewController.kt")
+                ktlint(ktlintVersion).editorConfigOverride(
+                    mapOf(
+                        "android" to "true",
+                        "ktlint_standard_package-name" to "disabled",
+                        "ktlint_function_naming_ignore_when_annotated_with" to "Composable",
+                    ),
+                )
+            }
+            format("kts") {
+                target("**/*.kts")
+                targetExclude("**/build/**/*.kts")
+            }
+            format("xml") {
+                target("**/*.xml")
+                targetExclude("**/build/**/*.xml")
+            }
+        }
+    }
+}
