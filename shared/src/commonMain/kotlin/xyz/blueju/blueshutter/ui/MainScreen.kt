@@ -14,7 +14,6 @@ import xyz.blueju.blueshutter.ui.theme.BlueShutterTheme
 
 @Composable
 fun MainScreen() {
-
     BlueShutterTheme {
         Surface {
             Column(

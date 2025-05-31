@@ -17,22 +17,22 @@ sealed interface BluetoothMessage {
 
     data class Response(
         val requestId: RequestId,
-        val result: Result<Payload>
+        val result: Result<Payload>,
     ) : BluetoothMessage
 
     data class Ack(
         val seqId: SequenceId,
-        val requestId: RequestId
+        val requestId: RequestId,
     ) : BluetoothMessage
 
     data class Nack(
         val seqId: SequenceId,
-        val requestId: RequestId
+        val requestId: RequestId,
     ) : BluetoothMessage
 
-    data object KeepAlive : BluetoothMessage  // Ping
+    data object KeepAlive : BluetoothMessage // Ping
 
-    data object KeepAliveAck : BluetoothMessage  // Pong
+    data object KeepAliveAck : BluetoothMessage // Pong
 
     data class Error(
         val errorCode: ErrorCode,

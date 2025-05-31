@@ -6,11 +6,11 @@ import xyz.blueju.blueshutter.domain.model.device.Device
 sealed interface HandshakeMessage {
     data class HelloFromCentral(
         val centralDevice: Device,
-        val supportedCommands: Set<Command>
+        val supportedCommands: Set<Command>,
     ) : HandshakeMessage
 
     data class AckFromPeripheral(
         val peripheralDevice: Device,
-        val allowedCommands: Set<Command>
+        val allowedCommands: Set<Command>,
     ) : HandshakeMessage
 }

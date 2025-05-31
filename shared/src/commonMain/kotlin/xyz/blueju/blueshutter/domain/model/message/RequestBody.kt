@@ -25,7 +25,7 @@ data object TakePhotoRequest : RequestBody<EmptyPayload> {
 data class TakePhotoWithDelayRequest(
     override val command: Command = TAKE_PHOTO,
     override val behavior: RequestBehavior = REQUIRE_RESPONSE,
-    override val payload: TimerPayload
+    override val payload: TimerPayload,
 ) : RequestBody<TimerPayload>
 
 data object StartRecordingRequest : RequestBody<EmptyPayload> {

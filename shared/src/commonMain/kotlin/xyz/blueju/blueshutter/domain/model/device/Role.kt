@@ -8,5 +8,5 @@ package xyz.blueju.blueshutter.domain.model.device
  */
 enum class Role {
     CENTRAL,
-    PERIPHERAL
+    PERIPHERAL,
 }

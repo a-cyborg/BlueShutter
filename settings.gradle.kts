@@ -15,5 +15,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "BlueShutter"
-include(":androidApp")
-include(":shared")
+include(
+    ":androidApp",
+    ":shared",
+)
