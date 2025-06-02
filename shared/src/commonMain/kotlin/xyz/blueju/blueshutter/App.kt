@@ -1,4 +1,4 @@
-package xyz.blueju.blueshutter.ui
+package xyz.blueju.blueshutter
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import xyz.blueju.blueshutter.ui.theme.BlueShutterTheme
 
 @Composable
-fun MainScreen() {
+fun App() {
     BlueShutterTheme {
         Surface {
             Column(
