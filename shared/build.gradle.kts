@@ -37,6 +37,13 @@ kotlin {
             implementation(compose.material3)
             implementation(compose.ui)
             implementation(libs.serialization.json)
+
+            implementation(libs.androidx.lifecycle.viewmodel)
+            implementation(libs.navigation.compose)
+
+            api(libs.koin.core)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

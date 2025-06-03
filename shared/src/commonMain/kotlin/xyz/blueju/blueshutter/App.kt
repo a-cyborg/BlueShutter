@@ -1,29 +1,24 @@
 package xyz.blueju.blueshutter
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
+import org.koin.compose.KoinApplication
+import org.koin.dsl.KoinAppDeclaration
+import xyz.blueju.blueshutter.di.appModule
+import xyz.blueju.blueshutter.navigation.BSNavHost
 import xyz.blueju.blueshutter.ui.theme.BlueShutterTheme
 
 @Composable
-fun App() {
-    BlueShutterTheme {
-        Surface {
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(30.dp),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally,
-            ) {
-                Text("Hello, World 🌷")
+fun App(appDeclaration: KoinAppDeclaration = {}) {
+    KoinApplication(
+        application = {
+            appDeclaration.invoke(this)
+            modules(appModule)
+        },
+    ) {
+        BlueShutterTheme {
+            Surface {
+                BSNavHost()
             }
         }
     }

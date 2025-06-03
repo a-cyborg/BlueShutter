@@ -1,14 +1,25 @@
 [versions]
 agp = "8.10.0"
-kotlin = "2.1.10"
+kotlin = "2.1.20"
+androidx-activityCompose = "1.7.0"
+androidx-lifecycle = "2.9.0"
+compose-multiplatform = "1.8.0-beta01"
+navigation = "2.9.0-beta01"
 serialization-json = "1.8.1"
-compose-multiplatform = "1.8.1"
-androidx-activityCompose = "1.8.0"
+koin = "4.1.0-Beta6"
 
 [libraries]
-kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activityCompose" }
-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization-json"}
+androidx-lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
+navigation-compose = { group = "org.jetbrains.androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
+serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization-json" }
+
+koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
+koin-compose = { group = "io.insert-koin", name = "koin-compose", version.ref = "koin" }
+koin-compose-viewmodel = { group = "io.insert-koin", name = "koin-compose-viewmodel", version.ref = "koin" }
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+
+kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
