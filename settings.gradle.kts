@@ -18,4 +18,5 @@ rootProject.name = "BlueShutter"
 include(
     ":androidApp",
     ":shared",
+    ":permissions",
 )
