@@ -8,5 +8,5 @@ import xyz.blueju.blueshutter.permissions.di.permissionModule
 val appModule = module {
     includes(permissionModule)
 
-    viewModel<RoleSelectionViewModel> { RoleSelectionViewModel(get()) }
+    viewModel<RoleSelectionViewModel> { RoleSelectionViewModel() }
 }

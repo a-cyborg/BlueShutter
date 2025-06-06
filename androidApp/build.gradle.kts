@@ -1,16 +1,16 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.kotlinAndroid)
-    alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
     namespace = "xyz.blueju.blueshutter"
-    compileSdk = 35
+    compileSdk = libs.versions.android.sdk.compile.get().toInt()
     defaultConfig {
         applicationId = "xyz.blueju.blueshutter"
-        minSdk = 24
-        targetSdk = 35
+        minSdk = libs.versions.android.sdk.min.get().toInt()
+        targetSdk = libs.versions.android.sdk.target.get().toInt()
         versionCode = 1
         versionName = "1.0"
     }
