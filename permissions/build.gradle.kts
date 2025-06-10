@@ -41,6 +41,14 @@ kotlin {
             dependencies {
             }
         }
+        val androidUnitTest by getting {
+            dependencies {
+                implementation(libs.coroutines.test)
+                implementation(libs.kotlin.test)
+                implementation(libs.koin.test)
+                implementation(libs.mockk)
+            }
+        }
     }
 }
 
