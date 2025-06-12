@@ -8,13 +8,14 @@ internal class PermissionServiceImpl(
     private val factory: PermissionHandlerFactory,
 ) : PermissionService {
 
-    override fun checkPermission(permission: Permission): Result<PermissionState> = factory.invoke(permission).getPermissionsState()
+    override fun checkPermission(permission: Permission): Result<PermissionState> =
+        factory.invoke(permission).value.getPermissionsState()
 
     override suspend fun requestPermission(permission: Permission) {
-        factory.invoke(permission).performPermissionRequest()
+        factory.invoke(permission).value.performPermissionRequest()
     }
 
     override fun openSettings(permission: Permission) {
-        factory.invoke(permission).navigateToSettings()
+        factory.invoke(permission).value.navigateToSettings()
     }
 }

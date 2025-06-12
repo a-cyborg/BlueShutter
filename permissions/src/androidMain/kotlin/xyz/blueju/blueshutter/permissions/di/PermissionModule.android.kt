@@ -7,6 +7,7 @@ import xyz.blueju.blueshutter.permissions.PermissionService
 import xyz.blueju.blueshutter.permissions.PermissionServiceImpl
 import xyz.blueju.blueshutter.permissions.handler.AndroidPermissionHandler
 import xyz.blueju.blueshutter.permissions.handler.BluetoothPermissionHandler
+import xyz.blueju.blueshutter.permissions.handler.CameraPermissionHandler
 import xyz.blueju.blueshutter.permissions.handler.PermissionHandlerFactory
 import xyz.blueju.blueshutter.permissions.model.Permission
 
@@ -21,5 +22,9 @@ actual fun platformModule(): Module = module {
 
     factory<AndroidPermissionHandler>(named(Permission.BLUETOOTH.name)) {
         BluetoothPermissionHandler(get(), inject())
+    }
+
+    factory<AndroidPermissionHandler>(named(Permission.CAMERA.name)) {
+        CameraPermissionHandler()
     }
 }
