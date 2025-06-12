@@ -44,7 +44,7 @@ class PermissionServiceImplTest {
         }
 
         every { mockHandlerFactory.invoke(Permission.BLUETOOTH) } returns
-            mockPermissionHandler
+            lazy { mockPermissionHandler }
 
         every { mockPermissionHandler.getPermissionsState() } returns
             Result.success(PermissionState.NEVER_ASKED)
@@ -108,7 +108,7 @@ class PermissionServiceImplTest {
         val captureSlot = CapturingSlot<Permission>()
 
         every { mockHandlerFactory.invoke(capture(captureSlot)) } returns
-            mockHandler
+            lazy { mockHandler }
 
         every { mockHandler.getPermissionsState() } returns
             Result.success(PermissionState.GRANTED)

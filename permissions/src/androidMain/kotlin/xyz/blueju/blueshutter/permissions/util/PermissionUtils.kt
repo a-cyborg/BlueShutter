@@ -19,16 +19,13 @@ internal fun checkPermissions(
     permissions: List<String>,
 ): PermissionState = permissions
     .map {
-        when {
-            (!context.hasRequestedPermissionBefore(it)) ->
-                PermissionState.NEVER_ASKED
-
-            (context.checkSelfPermission(it) == PackageManager.PERMISSION_GRANTED) ->
-                PermissionState.GRANTED
-
-            (activity.value.shouldShowRequestPermissionRationale(it)) ->
-                PermissionState.DENIED
-
-            else -> PermissionState.SETTINGS_REQUIRED
+        if (!context.hasRequestedPermissionBefore(it)) {
+            PermissionState.NEVER_ASKED
+        } else if (context.checkSelfPermission(it) == PackageManager.PERMISSION_GRANTED) {
+            PermissionState.GRANTED
+        } else if (activity.value.shouldShowRequestPermissionRationale(it)) {
+            PermissionState.DENIED
+        } else {
+            PermissionState.SETTINGS_REQUIRED
         }
     }.maxBy { it.priority }
