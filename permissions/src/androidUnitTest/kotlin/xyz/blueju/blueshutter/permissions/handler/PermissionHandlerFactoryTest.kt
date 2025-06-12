@@ -29,7 +29,7 @@ class PermissionHandlerFactoryTest {
                     factory<AndroidPermissionHandler>(named(Permission.CAMERA.name)) {
                         mockCameraHandler
                     }
-                }
+                },
             )
         }
     }
