@@ -6,11 +6,15 @@ import android.content.Context
 import android.os.Build
 import xyz.blueju.blueshutter.permissions.model.PermissionState
 import xyz.blueju.blueshutter.permissions.util.checkPermissions
+import xyz.blueju.blueshutter.permissions.util.markPermissionRequested
+import xyz.blueju.blueshutter.permissions.util.navigateToSettings
+import xyz.blueju.blueshutter.permissions.util.requestPermissions
 
 class BluetoothPermissionHandler(
     private val context: Context,
     private val activity: Lazy<Activity>,
 ) : AndroidPermissionHandler {
+
     override fun getPermissionsState(): Result<PermissionState> {
         try {
             val state = checkPermissions(context, activity, bluetoothPermissions)
@@ -20,9 +24,17 @@ class BluetoothPermissionHandler(
         }
     }
 
-    override suspend fun performPermissionRequest() {}
+    override suspend fun performPermissionRequest() {
+        activity.value.requestPermissions(bluetoothPermissions) { _ -> }
 
-    override fun navigateToSettings() {}
+        bluetoothPermissions.forEach {
+            context.markPermissionRequested(it)
+        }
+    }
+
+    override fun navigateToSettings() {
+        context.navigateToSettings() { _ -> }
+    }
 
     private val bluetoothPermissions: List<String> =
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {

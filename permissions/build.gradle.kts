@@ -39,13 +39,14 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
+                implementation(libs.androidx.core)
             }
         }
         val androidUnitTest by getting {
             dependencies {
                 implementation(libs.coroutines.test)
-                implementation(libs.kotlin.test)
                 implementation(libs.koin.test)
+                implementation(libs.kotlin.test)
                 implementation(libs.mockk)
             }
         }

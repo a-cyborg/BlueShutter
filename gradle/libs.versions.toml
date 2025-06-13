@@ -4,17 +4,19 @@ android-sdk-compile = "35"
 android-sdk-min = "24"
 android-sdk-target = "36"
 androidx-activity-compose = "1.7.0"
+androidx-core = "1.16.0"
 androidx-lifecycle = "2.9.0"
 compose-multiplatform = "1.8.0-beta01"
 coroutines = "1.10.2"
+koin = "4.1.0-Beta6"
 kotlin = "2.1.20"
 mockk = "1.14.2"
 navigation = "2.9.0-beta01"
 serialization-json = "1.8.1"
-koin = "4.1.0-Beta6"
 
 [libraries]
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity-compose" }
+androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core" }
 androidx-lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
 navigation-compose = { group = "org.jetbrains.androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
 serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization-json" }
@@ -22,6 +24,7 @@ koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin"
 koin-compose = { group = "io.insert-koin", name = "koin-compose", version.ref = "koin" }
 koin-compose-viewmodel = { group = "io.insert-koin", name = "koin-compose-viewmodel", version.ref = "koin" }
 koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+
 # Test
 coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines"}
 mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk"}
